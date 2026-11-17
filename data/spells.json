@@ -1,0 +1,20 @@
+{
+  "_notes": "Player powers. They cost nothing and are limited only by cooldown (seconds). Meteor damage is damage[0] + damage[1]*wave + damage[2]*wave*wave.",
+
+  "meteor": {
+    "name": "Meteor", "hotkey": "1", "cooldown": 40, "radius": 3.6, "delay": 0.9, "attack_type": "blast",
+    "damage": [60, 20, 1.2], "burn_frac": 0.12, "burn_time": 3.0, "targets": ["ground", "air"],
+    "icon": {"glyph": "meteor", "bg": [0.45, 0.16, 0.06]},
+    "description": "Call a meteor onto the road. Heavy blast damage in an area, and the survivors burn."
+  },
+  "frost_nova": {
+    "name": "Frost Nova", "hotkey": "2", "cooldown": 55, "radius": 5.0, "freeze": 2.5, "slow": [0.45, 4.0],
+    "icon": {"glyph": "snow", "bg": [0.12, 0.28, 0.46]},
+    "description": "Freeze every creep in the area solid for 2.5s, then leave them slowed. Bosses are only slowed."
+  },
+  "overcharge": {
+    "name": "Overcharge", "hotkey": "3", "cooldown": 70, "radius": 5.5, "duration": 8.0, "rate": 1.0,
+    "icon": {"glyph": "bolt", "bg": [0.42, 0.34, 0.08]},
+    "description": "Towers in the area attack twice as fast for 8 seconds."
+  }
+}

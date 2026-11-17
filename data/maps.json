@@ -1,0 +1,90 @@
+{
+  "_notes": "Each layout row is one line of cells (row 0 is the far/north edge). Legend:  = road (creeps walk, no building)   . terrace (build only)   o open ground (creeps walk AND you can build: maze maps)   x paved pad (walk only)   S rift gate (spawn)   E Heartfire (exit)   # rock   T trees   ~ water. Every map must keep a walkable route from each S to an E. hp_mult scales all creep health on that map.",
+
+  "emberfall_road": {
+    "name": "Emberfall Road",
+    "tag": "Lane  -  Beginner",
+    "description": "One long winding road from the rift to the Heartfire. Build on the terraces beside it.",
+    "palette": "vale", "start_hour": 9.5, "day_length": 2400, "seed": 11,
+    "hp_mult": 1.0,
+    "layout": [
+      "..........TT...........T##TTTTTT",
+      ".......................TTTTTTTTT",
+      "S========..............TTTT####T",
+      "........=..............TTTT####T",
+      "........=....========..TTTT####T",
+      "........=....=......=..TTTTTTTTT",
+      "........=....=......=..TTTTTTTTT",
+      "...======....=..~~..=...........",
+      "...=.........=..~~..=...........",
+      "#..=.........=..~~..=........TTT",
+      "#..=..##.....=......=======..TTT",
+      "#..=.........=............=..TTT",
+      "...=.........=............=.....",
+      "...===========............=.....",
+      "..........................=.....",
+      "................#####.....=====E",
+      "TT..............#####TT.........",
+      "TT..............#####TT.......##"
+    ]
+  },
+
+  "twin_rifts": {
+    "name": "Twin Rifts",
+    "tag": "Lane  -  Intermediate",
+    "description": "Two rifts open at once. Their roads meet at the river ford, then share one last stretch.",
+    "palette": "dusk", "start_hour": 15.5, "day_length": 2000, "seed": 23,
+    "hp_mult": 0.95,
+    "layout": [
+      "#.............TT...~~........TTT",
+      "...................~~........TTT",
+      "S======.....======.~~...........",
+      "......=.....=....=.~~.======....",
+      "......=.....=....=.~~.=....=....",
+      "......=.....=....=.~~.=....=..TT",
+      "......=======....=.~~.=....=..TT",
+      "TTTT.............=.~~.=....=..T#",
+      "##TT....###......======....=..T#",
+      "##TT....###......=.~~...##.=..T#",
+      "TTTT.............=.~~...##.=..TT",
+      "......=======....=.~~......=..TT",
+      "......=.....=....=.~~......=....",
+      "......=.....=....=.~~.======....",
+      "......=.....=....=.~~.=.........",
+      "S======.....======.~~.=.........",
+      "...................~~.=========E",
+      "#.............TT...~~..........."
+    ]
+  },
+
+  "hollow_moor": {
+    "name": "The Hollow Moor",
+    "tag": "Maze  -  Advanced",
+    "description": "An open moor with no road at all. Your towers are the walls: build a maze, but never seal it.",
+    "palette": "moor", "start_hour": 17.2, "day_length": 2600, "seed": 37,
+    "hp_mult": 0.8,
+    "layout": [
+      "################################",
+      "#TTooTTo##ooooooooooooooooooTTT#",
+      "#TTooooo##ooooooooooooooooooTTT#",
+      "#ooooooo##ooo#ooooooooooooooooo#",
+      "#ooo#ooo##oooooooooooo##ooooooo#",
+      "#ooooooo##oooooooooooo##ooooooo#",
+      "#ooooooo##oooooooooooo##ooooooo#",
+      "#xxooooo##ooooo~~~oooo##oooooxx#",
+      "Sxxooooo##oooo~~~~oooo##oooooxxE",
+      "Sxxooooo##oooo~~~~oooo##oooooxxE",
+      "#xxooooo##oooo~~~ooooo##oooooxx#",
+      "#ooooooo##oooooooooooo##ooooooo#",
+      "#ooooooo##oooooooooooo##ooooooo#",
+      "#ooooooo##oooooooooooo##ooo#ooo#",
+      "#ooooooooooooooooo#ooo##ooooooo#",
+      "#TTToooooooooooooooooo##oTToTTT#",
+      "#TTToooooooooooooooooo##oTToTTT#",
+      "################################"
+    ],
+    "_bot_notes": "bot_maze is the wall the computer player builds first (column, row): two long walls that force an S through the middle chamber.",
+    "bot_maze": [[10, 12], [11, 12], [12, 12], [13, 12], [14, 12], [15, 12], [16, 12], [17, 12], [18, 12], [19, 12],
+                 [21, 5], [20, 5], [19, 5], [18, 5], [17, 5], [16, 5], [15, 5], [14, 5], [13, 5], [12, 5]]
+  }
+}

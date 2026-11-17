@@ -1,0 +1,60 @@
+{
+  "_notes": "A creep's health in wave w is  curve.hp[0] * (1 + curve.hp[1]*n + curve.hp[2]*n*n) * creep.hp * difficulty.hp * map.hp_mult  with n = w-1. The wave's kill gold (curve.bounty[0] + curve.bounty[1]*w) is shared between its creeps by their hp weight; clearing the wave pays curve.clear[0] + curve.clear[1]*w on top. Groups spawn 'count' creeps 'interval' seconds apart, starting 'delay' seconds into the wave. On maps with two rifts the creeps alternate between them.",
+
+  "curve": {"hp": [21, 0.47, 0.05], "bounty": [38, 10], "clear": [12, 2]},
+  "first_delay": 25,
+  "early_bonus": 0.6,
+
+  "waves": [
+    {"groups": [{"creep": "gloomling", "count": 10, "interval": 1.0}]},
+    {"groups": [{"creep": "bristleboar", "count": 12, "interval": 0.9}]},
+    {"groups": [{"creep": "skitterling", "count": 24, "interval": 0.45}]},
+    {"groups": [{"creep": "marauder", "count": 8, "interval": 1.2}]},
+    {"groups": [{"creep": "gloomwing", "count": 10, "interval": 0.9}]},
+    {"groups": [{"creep": "mire_crawler", "count": 12, "interval": 1.0}]},
+    {"groups": [{"creep": "shellback", "count": 8, "interval": 1.4}]},
+    {"groups": [{"creep": "gloomling", "count": 8, "interval": 1.0}, {"creep": "hexer", "count": 4, "interval": 2.0, "delay": 0.5}]},
+    {"groups": [{"creep": "ooze", "count": 9, "interval": 1.3}]},
+    {"name": "The Warlord", "groups": [{"creep": "marauder", "count": 4, "interval": 1.0}, {"creep": "ogre_warlord", "count": 1, "interval": 1.0, "delay": 5.0}]},
+
+    {"groups": [{"creep": "houndrider", "count": 10, "interval": 0.9}]},
+    {"groups": [{"creep": "wraith", "count": 12, "interval": 1.0}]},
+    {"groups": [{"creep": "skitterling", "count": 32, "interval": 0.3}]},
+    {"groups": [{"creep": "marauder", "count": 8, "interval": 1.1}, {"creep": "hexer", "count": 3, "interval": 2.8, "delay": 1.0}]},
+    {"groups": [{"creep": "drake", "count": 7, "interval": 1.2}]},
+    {"groups": [{"creep": "stalker", "count": 16, "interval": 0.6}]},
+    {"groups": [{"creep": "shellback", "count": 10, "interval": 1.2}]},
+    {"groups": [{"creep": "mire_crawler", "count": 12, "interval": 0.9}, {"creep": "hexer", "count": 3, "interval": 3.2, "delay": 1.0}]},
+    {"groups": [{"creep": "ooze", "count": 12, "interval": 1.0}]},
+    {"name": "The Behemoth", "groups": [{"creep": "shellback", "count": 4, "interval": 1.4}, {"creep": "behemoth", "count": 1, "interval": 1.0, "delay": 7.0}]},
+
+    {"groups": [{"creep": "wraith", "count": 16, "interval": 0.8}]},
+    {"groups": [{"creep": "houndrider", "count": 14, "interval": 0.7}]},
+    {"groups": [{"creep": "gloomling", "count": 8, "interval": 1.0}, {"creep": "gloomwing", "count": 14, "interval": 0.55, "delay": 1.0}]},
+    {"groups": [{"creep": "ogre", "count": 5, "interval": 2.5}]},
+    {"name": "The Elder Drake", "groups": [{"creep": "drake", "count": 4, "interval": 1.2}, {"creep": "elder_drake", "count": 1, "interval": 1.0, "delay": 6.0}]},
+    {"groups": [{"creep": "skitterling", "count": 48, "interval": 0.22}]},
+    {"groups": [{"creep": "marauder", "count": 10, "interval": 1.0}, {"creep": "hexer", "count": 4, "interval": 2.4, "delay": 1.0}]},
+    {"groups": [{"creep": "wraith", "count": 10, "interval": 0.9}, {"creep": "stalker", "count": 12, "interval": 0.7, "delay": 3.0}]},
+    {"groups": [{"creep": "ogre", "count": 4, "interval": 2.6}, {"creep": "shellback", "count": 6, "interval": 1.6, "delay": 1.3}]},
+    {"name": "The Hollow King", "groups": [{"creep": "houndrider", "count": 8, "interval": 0.9}, {"creep": "ogre", "count": 3, "interval": 3.0, "delay": 2.0},
+                                        {"creep": "hollow_king", "count": 1, "interval": 1.0, "delay": 12.0}]}
+  ],
+
+  "endless": {
+    "_notes": "After the last wave, endless mode cycles through these templates; health keeps following the curve and is multiplied by growth each wave past the end.",
+    "growth": 1.08,
+    "cycle": [
+      {"groups": [{"creep": "marauder", "count": 12, "interval": 0.9}, {"creep": "hexer", "count": 4, "interval": 2.4, "delay": 1.0}]},
+      {"groups": [{"creep": "stalker", "count": 20, "interval": 0.5}]},
+      {"groups": [{"creep": "wraith", "count": 16, "interval": 0.7}]},
+      {"groups": [{"creep": "drake", "count": 10, "interval": 0.9}]},
+      {"groups": [{"creep": "ooze", "count": 16, "interval": 0.8}]},
+      {"groups": [{"creep": "ogre", "count": 6, "interval": 2.2}]},
+      {"groups": [{"creep": "skitterling", "count": 60, "interval": 0.2}]},
+      {"groups": [{"creep": "shellback", "count": 12, "interval": 1.0}, {"creep": "houndrider", "count": 10, "interval": 0.8, "delay": 4.0}]},
+      {"groups": [{"creep": "gloomling", "count": 12, "interval": 0.8}, {"creep": "gloomwing", "count": 18, "interval": 0.5, "delay": 1.0}]},
+      {"name": "A Champion of the Hollow", "groups": [{"creep": "ogre", "count": 4, "interval": 2.5}, {"creep": "behemoth", "count": 1, "interval": 1.0, "delay": 8.0}]}
+    ]
+  }
+}

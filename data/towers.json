@@ -1,0 +1,111 @@
+{
+  "_notes": "Each tower has three levels; 'cost' is the price of that level (build cost for level 1, upgrade cost after). Ranges and radii are world units (one grid cell is 2). kind: projectile | cone | chain | beam | aura. Effects: slow [fraction, seconds], freeze / stun [chance, seconds], burn [damage per second, seconds], poison [damage per second, seconds, armor shred], chain [targets, jump radius, falloff], ramp [max multiplier, gain per second], crit [chance, multiplier], impale [extra targets, radius, damage fraction], aura {damage, rate, range bonus}.",
+
+  "arrow": {
+    "name": "Arrow Spire", "hotkey": "q", "kind": "projectile", "attack_type": "pierce", "targets": ["ground", "air"],
+    "projectile": "arrow", "sound": "bow", "default_mode": "first", "icon_bg": [0.22, 0.30, 0.16],
+    "description": "Cheap, fast and reliable. Shreds light creeps; arrows glance off heavy plate.",
+    "levels": [
+      {"name": "Arrow Spire", "cost": 50, "damage": 9, "range": 6.5, "cooldown": 0.8},
+      {"name": "Longbow Spire", "cost": 75, "damage": 20, "range": 7.0, "cooldown": 0.75},
+      {"name": "Hawkeye Spire", "cost": 170, "damage": 25, "range": 7.6, "cooldown": 0.65, "multishot": 2, "crit": [0.2, 2.5],
+       "perk": "Twin Shot: looses arrows at two targets. 20% chance to strike for 2.5x."}
+    ]
+  },
+
+  "cannon": {
+    "name": "Cannon Bastion", "hotkey": "w", "kind": "projectile", "attack_type": "blast", "targets": ["ground"],
+    "projectile": "shell", "sound": "cannon", "default_mode": "first", "icon_bg": [0.32, 0.24, 0.16],
+    "description": "Slow shells that burst on impact. Cracks heavy armor and flattens packs. Cannot hit flyers.",
+    "levels": [
+      {"name": "Cannon Bastion", "cost": 90, "damage": 27, "range": 6.0, "cooldown": 1.9, "splash": 1.7},
+      {"name": "Mortar Bastion", "cost": 130, "damage": 64, "range": 6.5, "cooldown": 1.8, "splash": 2.0},
+      {"name": "Bombard Bastion", "cost": 280, "damage": 135, "range": 7.0, "cooldown": 1.7, "splash": 2.4, "stun": [0.25, 0.6],
+       "perk": "Concussion: 25% chance to stun everything in the blast for 0.6s."}
+    ]
+  },
+
+  "frost": {
+    "name": "Frost Obelisk", "hotkey": "e", "kind": "projectile", "attack_type": "elemental", "targets": ["ground", "air"],
+    "projectile": "frost", "sound": "frost", "default_mode": "first", "prefer": "unslowed", "icon_bg": [0.14, 0.26, 0.40],
+    "description": "Low damage, but every shard chills a small area. Slowed creeps spend longer under your other towers.",
+    "levels": [
+      {"name": "Frost Obelisk", "cost": 70, "damage": 6, "range": 5.5, "cooldown": 1.1, "splash": 1.5, "slow": [0.30, 2.0]},
+      {"name": "Rime Obelisk", "cost": 100, "damage": 14, "range": 6.0, "cooldown": 1.05, "splash": 1.8, "slow": [0.40, 2.5]},
+      {"name": "Glacier Obelisk", "cost": 220, "damage": 30, "range": 6.5, "cooldown": 1.0, "splash": 2.1, "slow": [0.50, 3.0],
+       "freeze": [0.12, 1.0], "perk": "Deep Freeze: 12% chance to freeze creeps solid for 1s."}
+    ]
+  },
+
+  "ember": {
+    "name": "Ember Brazier", "hotkey": "r", "kind": "cone", "attack_type": "elemental", "targets": ["ground"],
+    "sound": "flame", "default_mode": "first", "icon_bg": [0.42, 0.18, 0.08],
+    "description": "Short range, but its jet of flame scorches every creep in front of it and leaves them burning. Burns through wards.",
+    "levels": [
+      {"name": "Ember Brazier", "cost": 80, "damage": 3.2, "range": 3.8, "cooldown": 0.25, "cone": 60, "burn": [4, 3.0]},
+      {"name": "Pyre Brazier", "cost": 120, "damage": 7.5, "range": 4.1, "cooldown": 0.25, "cone": 70, "burn": [9, 3.0]},
+      {"name": "Inferno Brazier", "cost": 260, "damage": 15, "range": 4.4, "cooldown": 0.25, "cone": 85, "burn": [20, 3.5],
+       "perk": "Wildfire: a wider jet and a far hotter burn."}
+    ]
+  },
+
+  "storm": {
+    "name": "Storm Coil", "hotkey": "a", "kind": "chain", "attack_type": "arcane", "targets": ["ground", "air"],
+    "sound": "zap", "default_mode": "first", "icon_bg": [0.24, 0.20, 0.44],
+    "description": "Lightning that leaps from creep to creep. Tears through ethereal things; wards shrug it off.",
+    "levels": [
+      {"name": "Storm Coil", "cost": 110, "damage": 17, "range": 6.0, "cooldown": 1.3, "chain": [3, 3.0, 0.7]},
+      {"name": "Thunder Coil", "cost": 160, "damage": 38, "range": 6.5, "cooldown": 1.2, "chain": [4, 3.2, 0.75]},
+      {"name": "Tempest Coil", "cost": 340, "damage": 76, "range": 7.0, "cooldown": 1.1, "chain": [6, 3.5, 0.85],
+       "perk": "Tempest: arcs through six creeps and barely weakens between jumps."}
+    ]
+  },
+
+  "venom": {
+    "name": "Venom Thorn", "hotkey": "s", "kind": "projectile", "attack_type": "pierce", "targets": ["ground", "air"],
+    "projectile": "venom", "sound": "spit", "default_mode": "first", "prefer": "unpoisoned", "icon_bg": [0.16, 0.34, 0.12],
+    "description": "Poison ignores armor, strips it away and stops regeneration. Spreads its darts across fresh targets.",
+    "levels": [
+      {"name": "Venom Thorn", "cost": 75, "damage": 4, "range": 6.0, "cooldown": 1.0, "poison": [5, 4.0, 2]},
+      {"name": "Blight Thorn", "cost": 110, "damage": 9, "range": 6.5, "cooldown": 1.0, "poison": [11, 4.0, 4]},
+      {"name": "Plague Thorn", "cost": 240, "damage": 18, "range": 7.0, "cooldown": 0.9, "poison": [22, 5.0, 7], "spread": 2.6,
+       "perk": "Contagion: a poisoned creep that dies infects the creeps around it."}
+    ]
+  },
+
+  "prism": {
+    "name": "Sun Prism", "hotkey": "d", "kind": "beam", "attack_type": "arcane", "targets": ["ground", "air"],
+    "sound": "beam", "default_mode": "strong", "icon_bg": [0.44, 0.36, 0.12],
+    "description": "A focused beam that grows hotter the longer it holds one target. Your answer to ogres and bosses.",
+    "levels": [
+      {"name": "Sun Prism", "cost": 130, "damage": 15, "range": 7.5, "cooldown": 0.1, "ramp": [2.5, 0.75]},
+      {"name": "Radiant Prism", "cost": 190, "damage": 34, "range": 8.0, "cooldown": 0.1, "ramp": [3.0, 0.8]},
+      {"name": "Solar Prism", "cost": 400, "damage": 72, "range": 8.5, "cooldown": 0.1, "ramp": [4.0, 1.0], "armor_pierce": 0.5,
+       "perk": "Sunlance: ramps to 4x damage and ignores half of the target's armor."}
+    ]
+  },
+
+  "ballista": {
+    "name": "Sky Ballista", "hotkey": "f", "kind": "projectile", "attack_type": "pierce", "targets": ["ground", "air"],
+    "projectile": "bolt", "sound": "ballista", "default_mode": "strong", "icon_bg": [0.20, 0.28, 0.36],
+    "description": "Very long range, heavy bolts, slow to reload. Deals double damage to anything that flies.",
+    "levels": [
+      {"name": "Sky Ballista", "cost": 100, "damage": 34, "range": 9.0, "cooldown": 2.2, "air_bonus": 1.0},
+      {"name": "Heavy Ballista", "cost": 150, "damage": 80, "range": 10.0, "cooldown": 2.1, "air_bonus": 1.0},
+      {"name": "Skybreaker", "cost": 320, "damage": 175, "range": 11.0, "cooldown": 2.0, "air_bonus": 1.0, "impale": [2, 2.6, 0.6],
+       "crit": [0.25, 2.0], "perk": "Impale: the bolt punches through to two more creeps. 25% chance to strike for 2x."}
+    ]
+  },
+
+  "banner": {
+    "name": "War Banner", "hotkey": "z", "kind": "aura", "attack_type": "none", "targets": [],
+    "sound": "horn", "default_mode": "first", "icon_bg": [0.14, 0.22, 0.44],
+    "description": "Does not attack. Towers in its aura hit harder. Auras do not stack: the strongest one counts.",
+    "levels": [
+      {"name": "War Banner", "cost": 120, "range": 4.2, "aura": {"damage": 0.15}},
+      {"name": "Battle Standard", "cost": 180, "range": 5.0, "aura": {"damage": 0.25, "rate": 0.10}},
+      {"name": "Royal Standard", "cost": 360, "range": 6.2, "aura": {"damage": 0.35, "rate": 0.20, "range": 0.10},
+       "perk": "Royal Command: also grants +10% range."}
+    ]
+  }
+}

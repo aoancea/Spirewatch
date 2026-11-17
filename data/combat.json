@@ -1,0 +1,27 @@
+{
+  "_difficulty_notes": "hp multiplies creep health; hp_ramp (optional) adds that much to the multiplier for every wave after the first, so Hard starts close to Normal and pulls away. bounty multiplies gold income; countdown is the pause between waves in seconds.",
+  "_notes": "Damage dealt = damage * multipliers[attack_type][armor_type] * armor_factor. armor_factor = 1 - (k*armor)/(1 + k*armor) for positive armor, and 2 - (1-k)^(-armor) for negative armor (shredded by venom). 'true' damage (poison) ignores both. Bosses resist slows and cannot be frozen or stunned.",
+
+  "multipliers": {
+    "pierce":    {"unarmored": 1.0,  "light": 1.5, "heavy": 0.6,  "warded": 1.0, "ethereal": 0.5},
+    "blast":     {"unarmored": 1.25, "light": 0.8, "heavy": 1.5,  "warded": 0.8, "ethereal": 0.5},
+    "arcane":    {"unarmored": 1.0,  "light": 1.0, "heavy": 1.25, "warded": 0.5, "ethereal": 1.5},
+    "elemental": {"unarmored": 1.0,  "light": 1.1, "heavy": 0.8,  "warded": 1.5, "ethereal": 1.25},
+    "true":      {"unarmored": 1.0,  "light": 1.0, "heavy": 1.0,  "warded": 1.0, "ethereal": 1.0}
+  },
+  "armor_k": 0.06,
+  "boss_slow_resist": 0.5,
+  "splash_edge": 0.5,
+
+  "difficulty": {
+    "easy":   {"name": "Easy",   "hp": 0.78, "lives": 30, "gold": 150, "bounty": 1.1, "countdown": 18, "score": 0.6,
+               "description": "Weaker creeps, 30 lives and a fuller purse. A relaxed first run."},
+    "normal": {"name": "Normal", "hp": 1.0,  "lives": 20, "gold": 120, "bounty": 1.0, "countdown": 14, "score": 1.0,
+               "description": "The intended challenge: mix your towers and mind the boss waves."},
+    "hard":   {"name": "Hard",   "hp": 1.06, "hp_ramp": 0.007, "lives": 10, "gold": 110, "bounty": 0.95, "countdown": 10, "score": 1.6,
+               "description": "Tougher creeps, 10 lives, less gold. Every tower has to earn its place."}
+  },
+
+  "armor_names": {"unarmored": "Unarmored", "light": "Light", "heavy": "Heavy", "warded": "Warded", "ethereal": "Ethereal"},
+  "attack_names": {"pierce": "Pierce", "blast": "Blast", "arcane": "Arcane", "elemental": "Elemental", "true": "Poison"}
+}

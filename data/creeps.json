@@ -1,0 +1,116 @@
+{
+  "_notes": "hp is a multiplier on the wave's base health (see waves.json); speed is world units per second. Traits: flying, regen (fraction of max health per second, halted by poison), heal [fraction, every N seconds, radius] (a creep can only be mended once every 1.8s, so healers do not stack), split [child creep, count], slow_resist (0..1), boss (resists slows, immune to freeze and stun). lives is how many lives a leak costs.",
+
+  "gloomling": {
+    "name": "Gloomling", "hp": 1.0, "speed": 2.6, "armor": 0, "armor_type": "unarmored",
+    "description": "Rift-spawned rabble. No strengths, no weaknesses.",
+    "model": {"kind": "humanoid", "scale": 0.86, "look": {"race": "goblin", "skin": [0.47, 0.40, 0.60], "eyes": [1.0, 0.35, 0.75],
+              "chest_style": "vest", "shirt": [0.24, 0.19, 0.28], "pants": [0.22, 0.2, 0.27], "boots": null, "weapon": "club"}}
+  },
+  "bristleboar": {
+    "name": "Bristleboar", "hp": 0.8, "speed": 3.5, "armor": 0, "armor_type": "light",
+    "description": "Fast and thin-skinned. Arrows punish it.",
+    "model": {"kind": "quadruped", "style": "boar", "color": [0.36, 0.26, 0.36], "accent": [0.62, 0.3, 0.55], "scale": 0.72}
+  },
+  "skitterling": {
+    "name": "Skitterling", "hp": 0.4, "speed": 3.3, "armor": 0, "armor_type": "light",
+    "description": "Comes in swarms. Splash and chain attacks clear them best.",
+    "model": {"kind": "scorpion", "color": [0.18, 0.36, 0.40], "accent": [0.75, 0.3, 0.8], "scale": 0.62}
+  },
+  "marauder": {
+    "name": "Hollow Marauder", "hp": 1.3, "speed": 2.3, "armor": 3, "armor_type": "heavy",
+    "description": "Plate and shield. Blast and arcane damage break it; arrows barely scratch it.",
+    "model": {"kind": "humanoid", "scale": 0.95, "look": {"race": "orc", "skin": [0.42, 0.46, 0.55], "eyes": [1.0, 0.3, 0.6],
+              "hair": [0.1, 0.08, 0.14], "chest_style": "plate", "shirt": [0.30, 0.27, 0.36], "pants": [0.2, 0.18, 0.24],
+              "boots": [0.16, 0.14, 0.18], "helmet": "horned", "helmet_color": [0.32, 0.29, 0.38], "shoulders": [0.28, 0.25, 0.33],
+              "weapon": "axe", "offhand": "shield", "offhand_color": [0.4, 0.14, 0.42]}}
+  },
+  "gloomwing": {
+    "name": "Gloomwing", "hp": 0.5, "speed": 3.3, "armor": 0, "armor_type": "light", "flying": true,
+    "description": "Flies straight for the Heartfire, ignoring the road. Cannons and braziers cannot reach it.",
+    "model": {"kind": "bat", "color": [0.30, 0.22, 0.38], "accent": [0.7, 0.25, 0.6], "scale": 0.8}
+  },
+  "mire_crawler": {
+    "name": "Mire Crawler", "hp": 1.0, "speed": 2.7, "armor": 1, "armor_type": "unarmored", "regen": 0.015,
+    "description": "Regenerates as it walks. Poison stops the healing; burst it down or it recovers.",
+    "model": {"kind": "quadruped", "style": "lizard", "color": [0.26, 0.42, 0.30], "accent": [0.6, 0.85, 0.3], "scale": 0.9}
+  },
+  "shellback": {
+    "name": "Shellback", "hp": 1.35, "speed": 1.8, "armor": 6, "armor_type": "heavy",
+    "description": "Slow and thickly armored. Venom strips the shell; cannons and prisms crack it.",
+    "model": {"kind": "crab", "color": [0.40, 0.30, 0.50], "scale": 0.9}
+  },
+  "hexer": {
+    "name": "Bog Hexer", "hp": 1.0, "speed": 2.4, "armor": 1, "armor_type": "warded", "heal": [0.04, 2.0, 4.5],
+    "description": "Warded against arcane and mends nearby creeps. Kill it first; fire and frost cut through wards.",
+    "model": {"kind": "humanoid", "scale": 0.9, "look": {"race": "troll", "skin": [0.34, 0.5, 0.52], "hair": [0.75, 0.3, 0.7],
+              "eyes": [0.6, 1.0, 0.5], "chest_style": "robe", "shirt": [0.3, 0.16, 0.34], "pants": [0.2, 0.14, 0.24], "boots": null,
+              "weapon": "staff", "weapon_color": [0.5, 1.0, 0.55], "mask": [0.85, 0.82, 0.7], "headdress": [0.75, 0.3, 0.7]}}
+  },
+  "ooze": {
+    "name": "Mire Ooze", "hp": 0.75, "speed": 2.2, "armor": 0, "armor_type": "unarmored", "split": ["oozeling", 2],
+    "description": "Bursts into two oozelings when it dies. Keep some damage in reserve further down the road.",
+    "model": {"kind": "slime", "color": [0.35, 0.62, 0.30], "scale": 1.0}
+  },
+  "oozeling": {
+    "name": "Oozeling", "hp": 0.28, "speed": 2.9, "armor": 0, "armor_type": "unarmored", "bounty": 0.1,
+    "description": "What is left of an ooze. Quick, but fragile.",
+    "model": {"kind": "slime", "color": [0.45, 0.72, 0.34], "scale": 0.58}
+  },
+  "houndrider": {
+    "name": "Dreadhound Rider", "hp": 1.0, "speed": 4.0, "armor": 2, "armor_type": "heavy",
+    "description": "Armored and fast. Slow it with frost or it will be past your towers before they reload.",
+    "model": {"kind": "rider", "mount": "hound", "mount_color": [0.24, 0.20, 0.28], "barding": [0.36, 0.14, 0.38], "scale": 0.72,
+              "look": {"race": "orc", "skin": [0.42, 0.46, 0.55], "eyes": [1.0, 0.3, 0.6], "chest_style": "plate",
+                       "shirt": [0.28, 0.25, 0.33], "pants": [0.2, 0.18, 0.24], "boots": [0.16, 0.14, 0.18], "helmet": "spiked",
+                       "helmet_color": [0.3, 0.27, 0.36], "weapon": "spear"}}
+  },
+  "wraith": {
+    "name": "Pale Wraith", "hp": 0.9, "speed": 2.8, "armor": 0, "armor_type": "ethereal", "slow_resist": 0.5,
+    "description": "Half here, half elsewhere: arrows and shells pass through, slows barely hold. Arcane and fire burn it away.",
+    "model": {"kind": "wraith", "color": [0.72, 0.80, 0.92], "accent": [0.45, 0.9, 1.0], "scale": 1.0}
+  },
+  "stalker": {
+    "name": "Night Stalker", "hp": 0.7, "speed": 4.6, "armor": 0, "armor_type": "light",
+    "description": "The fastest thing out of the rift. Frost and long range are your friends.",
+    "model": {"kind": "quadruped", "style": "hyena", "color": [0.22, 0.20, 0.30], "accent": [0.55, 0.25, 0.6], "scale": 0.82}
+  },
+  "ogre": {
+    "name": "Stone Ogre", "hp": 3.2, "speed": 1.9, "armor": 4, "armor_type": "heavy", "lives": 2,
+    "description": "A walking boulder. A leak costs two lives. Prisms and cannons, and venom to soften the hide.",
+    "model": {"kind": "ogre", "skin": [0.46, 0.44, 0.50], "accent": [0.4, 0.14, 0.42], "scale": 0.62}
+  },
+  "drake": {
+    "name": "Carrion Drake", "hp": 1.1, "speed": 2.7, "armor": 2, "armor_type": "heavy", "flying": true,
+    "description": "A flying brute. Ballistas deal double damage to flyers; storm coils and prisms help.",
+    "model": {"kind": "drake", "color": [0.30, 0.26, 0.36], "accent": [0.6, 0.2, 0.55], "scale": 0.62}
+  },
+
+  "ogre_warlord": {
+    "name": "Ogre Warlord", "hp": 6.0, "speed": 1.7, "armor": 5, "armor_type": "heavy", "boss": true, "lives": 6, "bounty": 5.0,
+    "description": "BOSS. Shrugs off half of every slow and cannot be frozen. Focus it with prisms and ballistas.",
+    "model": {"kind": "ogre", "skin": [0.36, 0.30, 0.42], "accent": [0.8, 0.6, 0.2], "scale": 0.92}
+  },
+  "behemoth": {
+    "name": "Gorehide Behemoth", "hp": 7.5, "speed": 1.5, "armor": 7, "armor_type": "heavy", "boss": true, "lives": 8,
+    "bounty": 6.0, "regen": 0.004,
+    "description": "BOSS. A mountain of plated hide that slowly knits itself back together. Strip its armor with venom.",
+    "model": {"kind": "behemoth", "skin": [0.44, 0.36, 0.48], "scale": 0.6}
+  },
+  "elder_drake": {
+    "name": "Elder Drake", "hp": 3.6, "speed": 2.0, "armor": 4, "armor_type": "heavy", "boss": true, "flying": true, "lives": 8,
+    "bounty": 5.0,
+    "description": "BOSS, FLYING. Only towers that can hit air will touch it. Ballistas are worth double here.",
+    "model": {"kind": "drake", "color": [0.20, 0.16, 0.26], "accent": [0.95, 0.5, 0.15], "scale": 1.15}
+  },
+  "hollow_king": {
+    "name": "The Hollow King", "hp": 8.5, "speed": 1.5, "armor": 10, "armor_type": "warded", "boss": true, "lives": 99,
+    "bounty": 8.0, "heal": [0.03, 2.5, 6.0],
+    "description": "FINAL BOSS. Warded, heavily armored, mends his guard, and ends the game if he reaches the Heartfire.",
+    "model": {"kind": "humanoid", "scale": 2.1, "look": {"race": "human", "skin": [0.62, 0.66, 0.74], "eyes": [1.0, 0.25, 0.7],
+              "hair": [0.85, 0.85, 0.9], "hair_style": "long", "chest_style": "plate", "shirt": [0.16, 0.13, 0.2],
+              "pants": [0.12, 0.1, 0.15], "boots": [0.1, 0.08, 0.12], "helmet": "horned", "helmet_color": [0.85, 0.68, 0.22],
+              "shoulders": [0.2, 0.16, 0.25], "weapon": "greataxe", "weapon_color": [0.6, 0.35, 0.7], "cape": [0.45, 0.1, 0.4],
+              "bracers": [0.85, 0.68, 0.22]}}
+  }
+}
