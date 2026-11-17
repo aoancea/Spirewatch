@@ -38,6 +38,14 @@ image, model or audio files.
 
 ![Every attack kind](docs/screenshots/towers_in_action.png)
 
+## Download and play (Windows)
+
+1. Download **[Spirewatch-v1.0.0-windows-x64.zip](https://github.com/aoancea/Spirewatch/releases/latest/download/Spirewatch-v1.0.0-windows-x64.zip)** from the [latest release](https://github.com/aoancea/Spirewatch/releases/latest).
+2. Unzip it anywhere.
+3. Run `Spirewatch\Spirewatch.exe`.
+
+No Python or installation is needed. Windows may show a SmartScreen warning for an unsigned app: choose *More info → Run anyway*.
+
 ## Run from source
 
 Requires Python 3.11+ (developed on 3.12, Windows).
