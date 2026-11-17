@@ -14,7 +14,6 @@ import sys
 
 from settings import GAME_TITLE, user_settings
 
-MENU_TESTS = ("menu",)
 
 
 def _parse_args(argv: list[str]) -> argparse.Namespace:
@@ -85,7 +84,9 @@ def main(argv: list[str] | None = None) -> None:
 
     maps = data.maps()
     diffs = data.combat()["difficulty"]
-    if args.autotest and not args.autotest.startswith(MENU_TESTS):
+    if args.autotest:
+        from core import autotest
+    if args.autotest and args.autotest not in autotest.MENU_SCRIPTS:
         from core.autotest import config_for
         game.start_match(config_for(args.autotest))
     elif args.quick is not None:

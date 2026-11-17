@@ -17,6 +17,7 @@ from core.match import MatchConfig
 from settings import SCREENSHOT_DIR
 
 Step = tuple
+MENU_SCRIPTS = {"menu"}         # scripts that begin at the main menu instead of inside a match
 
 CONFIGS: dict[str, dict[str, Any]] = {
     "t1": {"map": "emberfall_road"}, "t2": {"map": "emberfall_road"}, "t3": {"map": "hollow_moor"},

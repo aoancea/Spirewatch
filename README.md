@@ -7,6 +7,10 @@ where your towers *are* the road, and hold out for thirty waves.
 Everything is generated in code: the terrain, every tower, creep and icon, the sounds and the music. There are no
 image, model or audio files.
 
+![Spirewatch gameplay](docs/gameplay.gif)
+
+▶ **[Watch the 42-second gameplay video with sound](docs/gameplay.mp4)**
+
 ![The Hollow Moor at dusk](docs/screenshots/moor_dusk.png)
 
 | | |
@@ -149,6 +153,19 @@ python tools/capacity.py            # health each tower type stops per gold spen
 
 The bot places towers greedily and never calls a wave early, so treat this as a floor: Normal is winnable
 without powers, Hard expects you to use them and to place better than a greedy bot does. The bot has not beaten Hard on Twin Rifts or the moor.
+
+## Recording the video
+
+The gameplay video above is filmed by the game itself:
+
+```bash
+pip install imageio-ffmpeg          # bundles ffmpeg; not needed to play
+python tools/video.py
+```
+
+It runs a scripted storyboard on a fixed 1/30 s clock, pipes every frame to ffmpeg, and writes `docs/gameplay.mp4`
+and `docs/gameplay.gif`. The soundtrack is mixed offline from the sound events the game raised while filming, using
+the same procedural sounds and music, so nothing is captured from the speakers.
 
 ## Build the Windows executable
 
